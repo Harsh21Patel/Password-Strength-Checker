@@ -11,7 +11,6 @@ This project is a Password Strength Checker, designed to empower security by eva
 - [Features](#features)
 - [Usage](#usage)
 - [Contributors](#contributors)
-- [Guided By](#guided-by)
 - [Tools Used](#tools-used)
 - [License](#license)
 
