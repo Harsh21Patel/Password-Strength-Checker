@@ -1,8 +1,6 @@
-# Password-Strength-Checker
-The "Password Strength Checker" micro project is designed to enhance understanding and implementation of fundamental principles of information security. It offers a user-friendly interface to assess the robustness of passwords, providing educational feedback and guided suggestions for password improvement.
 # Password Strength Checker
 
-This project is a Password Strength Checker, designed to empower security by evaluating the robustness of passwords based on various criteria such as length, complexity, and uniqueness.
+The "Password Strength Checker" micro project is designed to enhance understanding and implementation of fundamental principles of information security. It offers a user-friendly interface to assess the robustness of passwords, providing educational feedback and guided suggestions for password improvement.
 
 ## Table of Contents
 
