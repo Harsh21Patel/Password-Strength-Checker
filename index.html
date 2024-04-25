@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🔐 Password Strength Checker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="shortcut icon" href="./emoji2.png" type="image/x-icon">
+
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/product-sans');
+
+    @font-face {
+      font-family: product sans;
+      font-style: normal;
+      font-weight: 400;
+      src: local('Product Sans'), url(https://fonts.cdnfonts.com/s/13998/ProductSans-Regular.woff) format('woff')
+    }
+
+    .strength-meter {
+      margin-top: 20px;
+    }
+
+    #password-strength {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid w-100 mt-0 p-0 m-0 mb-0">
+    <img src="./header.png" class="img-fluid w-100" alt="">
+  </div>
+  <div class="container mt-0">
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <img src="./psc1.png" class="img-fluid w-75" alt="">
+      </div>
+      <div class="col-md-6 mt-5">
+        <h1 style="font-size:300%;" class="mt-4"><span style="color: #71D66B;">Password
+          </span>Strength<br>Checker
+        </h1>
+        <h5 style="color: #545454;">Empower Your Security: Strengthen Your Passwords with Confidence</h5>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-md-6 mt-4">
+        <h1 class="mt-5"><span style="color: #71D66B;">Password </span>Strength Checker</h1>
+        <p style="color: #545454; text-align: justify;">A password strength checker is a tool that evaluates the
+          robustness of passwords based on various criteria such as length, complexity, and uniqueness.
+          Integrating such a tool into a beginner-friendly interface can greatly aid newcomers in
+          understanding the fundamentals of information security.</p>
+      </div>
+      <div class="col-md-6 text-center mt-5">
+        <img src="./emoji.png" class="img-fluid" width="40%" alt="">
+      </div>
+    </div>
+
+    <h2 class="mt-5">How It Works:</h2>
+    <ol>
+      <h5 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Educational Feedback:</strong>
+      </h5>
+      <p style="text-align: justify;">A password strength checker can provide immediate feedback on the quality of
+        passwords entered by beginners. This feedback can be educational, explaining why certain passwords are
+        weak or strong based on factors like length, character variety, and predictability.</p>
+
+      <h5 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Guided Suggestions:</strong>
+      </h5>
+      <p style="text-align: justify;"> The tool can offer suggestions to improve password strength. For example,
+        it could recommend increasing length, adding special characters, or avoiding common patterns like
+        sequential numbers or words found in dictionaries.</p>
+
+      <h5 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Interactive Learning:</strong>
+      </h5>
+      <p style="text-align: justify;"> Through interactive elements, beginners can experiment with different types
+        of passwords to see how they affect strength ratings. This hands-on approach fosters active learning and
+        helps users grasp concepts more effectively.</p>
+
+      <h5 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Visual
+          Representations:</strong></h5>
+      <p style="text-align: justify;"> Utilizing visual aids such as color-coded indicators or progress bars can
+        make it easier for beginners to understand the concept of password strength at a glance. For instance, a
+        red indicator might signify a weak password, while a green indicator indicates a strong one.</p>
+
+      <h5 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Explanation of Risks:</strong>
+      </h5>
+      <p style="text-align: justify;"> The tool can also educate beginners on the risks associated with weak
+        passwords, such as susceptibility to brute force attacks or password guessing. This knowledge encourages
+        users to prioritize stronger passwords for enhanced security.</p>
+
+      <h5 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Accessible Language:</strong>
+      </h5>
+      <p style="text-align: justify;"> Avoiding technical jargon and using simple language can make the tool more
+        accessible to beginners. Explanations should be clear and concise, focusing on essential concepts
+        without overwhelming users with unnecessary details.</p>
+
+      <h5 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Resources and Further
+          Learning:</strong></h5>
+      <p style="text-align: justify;"> Include links to additional resources or educational materials on
+        information security. This could range from articles and tutorials to online courses where beginners can
+        deepen their understanding of password security and broader cybersecurity topics.</p>
+
+    </ol>
+    <p class="mt-4">By incorporating these features, a password strength checker can serve as an effective
+      educational tool for beginners, empowering them to develop secure password practices and gain a foundational
+      understanding of information security principles.</p>
+
+    <div class="text-center mt-5">
+      <h2><img src="./emoji2.png" class="img-fluid" width="7%" alt=""> Okay, it's a lot to take in. Ready to test your
+        <strong style="color: #71D66B;">Password?</strong></h2>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="form-group">
+      <h4>Enter Your <strong style="color: #71D66B;">Password:</strong></h4>
+      <input type="text" class="form-control" id="password" onkeyup="checkPasswordStrength()">
+    </div>
+    <div class="strength-meter">
+      <h4>Password Strength: <span id="strength"></span></h4>
+      <div class="progress">
+        <div id="password-strength" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar">
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-3" onclick="generateRandomPassword()">Generate Random Password</button>
+    <button id="copy-password" class="btn btn-success mt-3 ml-2" style="display:none;" onclick="copyPassword()">Copy
+      Password</button>
+  </div>
+
+  <script>
+    function checkPasswordStrength() {
+      var password = document.getElementById('password').value;
+      var strengthMeter = document.getElementById('strength');
+      var progressBar = document.getElementById('password-strength');
+      var strongRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})');
+      var mediumRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})');
+
+      if (strongRegex.test(password)) {
+        strengthMeter.textContent = 'Strong';
+        strengthMeter.style.color = 'green';
+        progressBar.style.width = '100%';
+        progressBar.classList.remove('bg-warning');
+        progressBar.classList.remove('bg-danger');
+        progressBar.classList.add('bg-success');
+      } else if (mediumRegex.test(password)) {
+        strengthMeter.textContent = 'Medium';
+        strengthMeter.style.color = 'orange';
+        progressBar.style.width = '50%';
+        progressBar.classList.remove('bg-success');
+        progressBar.classList.remove('bg-danger');
+        progressBar.classList.add('bg-warning');
+      } else {
+        strengthMeter.textContent = 'Weak';
+        strengthMeter.style.color = 'red';
+        progressBar.style.width = '25%';
+        progressBar.classList.remove('bg-success');
+        progressBar.classList.remove('bg-warning');
+        progressBar.classList.add('bg-danger');
+      }
+
+      // Hide copy button if password is empty
+      if (password === '') {
+        document.getElementById('copy-password').style.display = 'none';
+      } else {
+        document.getElementById('copy-password').style.display = 'inline-block';
+      }
+    }
+
+    function generateRandomPassword() {
+      var length = 10; // Change the length as needed
+      var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+      var password = "";
+      var strongRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})');
+
+      do {
+        password = "";
+        for (var i = 0; i < length; i++) {
+          var randomIndex = Math.floor(Math.random() * charset.length);
+          password += charset[randomIndex];
+        }
+      } while (!strongRegex.test(password));
+
+      document.getElementById('password').value = password;
+      checkPasswordStrength();
+    }
+
+    function copyPassword() {
+      var passwordInput = document.getElementById('password');
+      passwordInput.select();
+      try {
+        document.execCommand('copy');
+        alert('Password copied to clipboard!');
+      } catch (err) {
+        console.error('Failed to copy password: ', err);
+        alert('Failed to copy password! Please copy it manually.');
+      }
+    }
+  </script>
+
+  <div class="container">
+    <h4 class="mt-5"><img src="./image3.png" class="img-fluid" width="7%" alt=""> To create a strong password, follow
+      these guidelines:</h4>
+    <ol>
+      <h4 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Length:</strong></h4>
+      <h5 style="text-align: justify;">Ensure your password is at least 8 characters long.</h5>
+
+      <h4 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Variety of Characters:</strong></h4>
+      <h5 style="text-align: justify;">Include a mix of uppercase letters, lowercase letters, numbers, and special
+        characters like !@#$%^&*.</h5>
+
+      <h4 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Avoid Common Patterns:</strong></h4>
+      <h5 style="text-align: justify;">Avoid using common words, phrases, or easily guessable patterns.</h5>
+    </ol>
+  </div>
+
+  <div class="container">
+    <h4 class="mt-5">Subject:</h4>
+    <ol>
+      <h4 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Basics of Information Security -
+          4360702</strong></h4>
+    </ol>
+  </div>
+  <div class="container">
+    <h4 class="mt-5">Created By:</h4>
+    <ol>
+      <h4 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Harsh Patel - 216240307001</strong>
+      </h4>
+      <h4 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Sahejan Memon -
+          216240307005</strong></h4>
+      <h4 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">Arsh Doi - 216240307041</strong>
+      </h4>
+    </ol>
+  </div>
+  <div class="container">
+    <h4 class="mt-5">Guided By:</h4>
+    <ol>
+      <h4 class="mt-3" style="text-align: justify;"><strong style="color: #71D66B;">K R Srivastava</strong></h4>
+    </ol>
+  </div>
+  <div class="container">
+    <h4 class="mt-5">Tools Used:</h4>
+    <ol>
+      <img src="./Tools.png" alt="">
+    </ol>
+  </div>
+  <br><br>
+  <div class="container-fluid w-100 mt-0 p-0 m-0">
+    <img src="./footer3.png" class="img-fluid w-100" alt="">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
